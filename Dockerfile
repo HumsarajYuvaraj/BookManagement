@@ -28,7 +28,7 @@ WORKDIR /app
  
 # Copy the built jar file from the build stage
 
-COPY --from=builder /app/target/*.war BookManagement-0.0.1-SNAPSHOT.war
+COPY --from=builder /app/target/*.war BookManagement.war
  
 # Expose the application port
 
@@ -36,5 +36,5 @@ EXPOSE 9093:8080
  
 # Define the entrypoint to run the application
 
-ENTRYPOINT ["java", "-war", "BookManagement-0.0.1-SNAPSHOT.war"]
+ENTRYPOINT ["java", "-jar", "BookManagement.war"]
  
