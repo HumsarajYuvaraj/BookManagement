@@ -28,7 +28,7 @@ WORKDIR /app
  
 # Copy the built jar file from the build stage
 
-COPY --from=builder /app/target/*.jar BookManagement-0.0.1-SNAPSHOT.war
+COPY --from=builder /app/target/*.war BookManagement-0.0.1-SNAPSHOT.war
  
 # Expose the application port
 
