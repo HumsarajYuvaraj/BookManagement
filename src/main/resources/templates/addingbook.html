@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Add Book</title>
+</head>
+<body>
+<form method="post" action="/savingbook" modelAttribute=${book}>
+	<h1>Step 2 ADDING Book</h1>
+	<table border="1">
+		<tr>
+			<td>Category:</td>
+			<td><select name="cid" required>
+				<option th:each="i : ${categorylist}" th:value="${i.id}" th:text="${i.name}"></option>
+			</select></td>
+		</tr>
+		<tr>
+			<td>Author:</td>
+			<td><select name="aid" required>
+				<option th:each="i : ${authorlist}" th:value="${i.id}" th:text="${i.name}"></option>
+			</select></td>
+		</tr>
+		<tr>
+			<td>Enter Book Title</td>
+			<td><input name="title"></td>
+		</tr>
+		<tr>
+			<td>Enter Book ISBN</td>
+			<td><input name="isbn"></td>
+		</tr>
+		<tr>
+			<td>Enter Book Price</td>
+			<td><input name="price"></td>
+		</tr>
+		
+	</table>
+			
+	<button type="submit">Save Book</button>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Book Management HomePage</title>
+</head>
+<body>
+	<h1>Book Management</h1>
+	
+<a th:href="@{/addingcategory}">Add Category</a><br><br>
+<a th:href="@{/listbycategory}">List By Category</a><br><br>
+<a th:href="@{/fetchbyid}">Find Book By ID</a><br><br>
+
+
+<a th:href="@{/editdeletebook}">Edit/Delete Book</a><br><br>
+
+
+
+</body>
+</html>
+
+<!-- <select name="id">
+	<option th:each="i : ${categorylist}" th:value="$i.id" th.text="$i.name"></option>
+</select> -->

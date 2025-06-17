@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Edit/Delete</title>
+</head>
+<body>
+<div>
+<table border="1">
+	<tr>
+		<th>
+			<td>Book ID</td>
+			<td>Book Name</td>
+			<td>Book ISBN</td>
+			<td>Book Price</td>
+			<td>Edit/Delete</td>
+			
+		</th>
+	</tr>
+	<tr th:each="i : ${booklist}">
+	<td></td>
+		<td th:text="${i.id}"></td>
+		<td th:text="${i.title}"></td>
+		<td th:text="${i.isbn}"></td>
+		<td th:text="${i.price}"></td>	
+		<td>
+			<a th:href="@{/editbook(id=${i.id})}">Edit</a><br>
+			<a th:href="@{/deletebook(id=${i.id})}">Delete</a>
+		</td>
+	</tr>
+</table>
+<table border="1">
+	<tr>
+		<th>
+			<td>Category ID</td>
+			<td>Category Name</td>			
+		</th>
+	</tr>
+	<tr th:each="i : ${categorylist}">
+	<td></td>
+		<td th:text="${i.id}"></td>
+		<td th:text="${i.name}"></td>
+
+		<td>
+			<a th:href="@{/editcategory(id=i.id)}">Edit</a><br>
+			<a th:href="@{/deletecategory(id=i.id)}">Delete</a>
+		</td>
+	</tr>
+</table><table border="1">
+	<tr>
+		<th>
+			<td>Author ID</td>
+			<td>Author Name</td>
+			<td>Author Biography</td>
+		
+			
+		</th>
+	</tr>
+	<tr th:each="i : ${authorlist}">
+	<td></td>
+		<td th:text="${i.id}"></td>
+		<td th:text="${i.name}"></td>
+		<td th:text="${i.biography}"></td>
+		<td>
+			<a th:href="@{/editauthor(id=i.id)}">Edit</a><br>
+			<a th:href="@{/deleteauthor(id=i.id)}">Delete</a>
+		</td>
+	</tr>
+</table>
+</div>
+</body>
+</html>

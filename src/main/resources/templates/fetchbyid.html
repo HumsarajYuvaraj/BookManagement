@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div>
+<form th:action="@{/findbyid}" method="post" th:object="${book}">
+Enter id:<input th:field="*{id}">
+<button type="submit">Find</button>
+</form>
+
+
+<table border="1">
+<tr>
+	<th>
+		<td>Book Id</td>
+		<td>Book Name</td>
+		<td>Book ISBN</td>
+		<td>Book Price</td>
+	</th>
+</tr>
+
+<tr th:each="i : ${bookdetails}">
+		<td th:text="${i.id}"></td>
+		<td th:text="${i.title}"></td>
+		<td th:text="${i.isbn}"></td>
+		<td th:text="${i.price}"></td>
+	</tr>
+</table>
+</div>
+</body>
+</html>

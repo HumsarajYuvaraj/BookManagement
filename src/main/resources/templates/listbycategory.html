@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>List By Category</title>
+</head>
+<body>
+<form method="post" th:action="@{/displaycategorylist}" th:object="${category}">
+Select Category:<select name="catname" required>
+	<option th:each="i : ${category}" th:value="${i.id}" th.text="${i.name}"></option>
+</select><br>
+<button type="submit">Get Book</button>
+</form>
+<div>
+	<table border="1">
+		<tr>
+			<td>Book ID</td>
+			<td>Book Name</td>
+			<td>Book ISBN</td>
+			<td>Book Price</td>
+		</tr>
+		
+		<tr th:each="i : ${newbook}">
+			<td th:text="${i.id}"></td>
+			<td th:text="${i.title}"></td>
+			<td th:text="${i.isbn}"></td>
+			<td th:text="${i.price}"></td>
+		
+		</tr>
+	</table>
+</div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Update Movie</title>
+</head>
+<body>
+<form method="post" th:action="@{/updatebook}" th:object="${bookid}">
+	ID<input th:type ="number" th:field="*{id}" readonly>
+	Title<input th:type="text" th:field="*{title}"required>
+	ISBN:<input th:type="text" th:field="*{isbn}"required>
+	Price:<input  th:type="text" th:field="*{price}"required>
+	
+	<button type="submit">Save & Submit</button>
+</form>
+</body>
+</html>
