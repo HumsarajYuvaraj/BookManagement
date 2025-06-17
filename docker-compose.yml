@@ -20,9 +20,9 @@ services:
     networks:
       - springboot-network
  
-  bookManagement:
+  BookManagement:
     build: .
-    container_name: bookManagement
+    container_name: BookManagement
     environment:
       MYSQL_HOST: mysql
       MYSQL_PORT: 3306
@@ -43,5 +43,3 @@ networks:
  
 volumes:
   mysql-data:
- 
- 
